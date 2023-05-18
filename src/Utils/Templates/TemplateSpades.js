@@ -8,7 +8,7 @@ import ExperienceSection from "../../Components/ExperienceSection";
 import TemplateEducation from "../../Components/TemplateEducation";
 import TemplateKeySkill from "../../Components/TemplateKeySkill";
 
-const Template2 = (props) => {
+const Template1 = (props) => {
   const personalinfo = props.personalinfo
     ? props.personalinfo
     : data.personal_info;
@@ -41,14 +41,17 @@ const Template2 = (props) => {
       id={`${props.index}report`}
       elevation={3}>
       <HeaderSection
-        primaryColor={"white"}
-        secondaryColor={"white"}
-        bgColor={"#9B536F"}
+        primaryColor={"#2196f3"}
+        secondaryColor={"black"}
+        bgColor={"white"}
+        hrcolor={"#2196f3"}
+        Hdownheight={"3px"}
+        hrsecondcolor={"none"}
         personalInfo={personalinfo}
         workExperience={workexperience}
       />
       <Container>
-        <TempHeading color={"#9B536F"} Hupcolor={"none"} Hupheight={"none"} Hdowncolor={"#9B536F"} Hdownheight={"none"} title={"Professional Experience"} />
+        <TempHeading color={"#2196f3"} Hupcolor={"#2196f3"} Hupheight={"3px"} Hdowncolor={"none"} Hdownheight={"none"} title={"Professional Experience"} />
         <ul style={{ marginBottom: 10 }}>
           {workexperience.map((experience, index) => {
             return (
@@ -59,9 +62,9 @@ const Template2 = (props) => {
             );
           })}
         </ul>
-        <TempHeading color={"#9B536F"} Hupcolor={"none"} Hupheight={"none"} Hdowncolor={"#9B536F"} Hdownheight={"none"} title={"Education"} />
+        <TempHeading color={"#2196f3"} Hupcolor={"#2196f3"} Hupheight={"3px"} Hdowncolor={"none"} Hdownheight={"none"} title={"Education"} />
         <TemplateEducation education={educationinfo} />
-        <TempHeading color={"#9B536F"} Hupcolor={"none"} Hupheight={"none"} Hdowncolor={"#9B536F"} Hdownheight={"none"} title={"Key Skills"} />
+        <TempHeading color={"#2196f3"} Hupcolor={"#2196f3"} Hupheight={"3px"} Hdowncolor={"none"} Hdownheight={"none"} title={"Key Skills"} />
         <ul style={{ marginBottom: 10 }}>
           {skills.map((skill, index) => {
             return <TemplateKeySkill key={index} skill={skill} />;
@@ -72,4 +75,4 @@ const Template2 = (props) => {
   );
 };
 
-export default Template2;
+export default Template1;

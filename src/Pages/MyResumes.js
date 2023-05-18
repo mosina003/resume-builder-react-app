@@ -19,7 +19,7 @@ import {
   selectTemplate,
 } from "../Redux/Actions/actions";
 
-
+// details in the local storage are stored in JSON format (key,value) on this page
 const Item = styled(Paper)(({ theme }) => ({
   backgroundColor: theme.palette.mode === "dark" ? "#1A2027" : "#fff",
   ...theme.typography.body2,

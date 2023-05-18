@@ -8,6 +8,7 @@ import Instagram from "@mui/icons-material/Instagram";
 import { Link } from "react-router-dom";
 import { Navbar } from "./";
 import aboutCV from "../Utils/Images/aboutCV.jpg";
+// An overview of the website
 
 export default function ButtonMUI() {
   return (

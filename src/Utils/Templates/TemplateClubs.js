@@ -8,7 +8,7 @@ import ExperienceSection from "../../Components/ExperienceSection";
 import TemplateEducation from "../../Components/TemplateEducation";
 import TemplateKeySkill from "../../Components/TemplateKeySkill";
 
-const Template1 = (props) => {
+const Template3 = (props) => {
   const personalinfo = props.personalinfo
     ? props.personalinfo
     : data.personal_info;
@@ -19,6 +19,7 @@ const Template1 = (props) => {
     ? props.educationinfo
     : data.education_details;
   const skills = props.skills ? props.skills : data.key_skills;
+
   return (
     <Paper
       sx={{
@@ -27,7 +28,7 @@ const Template1 = (props) => {
           sm: "400px",
           md: "450px",
           lg: "500px",
-          xl: "550px",
+          xl: "600px",
         },
         height: {
           xs: "500px",
@@ -40,18 +41,15 @@ const Template1 = (props) => {
       id={`${props.index}report`}
       elevation={3}>
       <HeaderSection
-        primaryColor={"#C98A55"}
-        secondaryColor={"black"}
-        bgColor={"white"}
-        hrcolor={"none"}
-        Hdownheight={"3px"}
-        hrsecondcolor={"none"}
+        primaryColor={"white"}
+        secondaryColor={"white"}
+        bgColor={"#9B536F"}
         personalInfo={personalinfo}
         workExperience={workexperience}
       />
       <Container>
-        <TempHeading color={"#C98A55"} Hupcolor={"none"} Hupheight={"none"} Hdowncolor={"#C98A55"} Hdownheight={"none"} title={"Professional Experience"} />
-        <ul style={{ paddingBottom: 10 }}>
+        <TempHeading color={"#9B536F"} Hupcolor={"none"} Hupheight={"none"} Hdowncolor={"#9B536F"} Hdownheight={"none"} title={"Professional Experience"} />
+        <ul style={{ marginBottom: 10 }}>
           {workexperience.map((experience, index) => {
             return (
               <ExperienceSection
@@ -61,9 +59,9 @@ const Template1 = (props) => {
             );
           })}
         </ul>
-        <TempHeading color={"#C98A55"} Hupcolor={"none"} Hupheight={"none"} Hdowncolor={"#C98A55"} Hdownheight={"none"} title={"Education"} />
+        <TempHeading color={"#9B536F"} Hupcolor={"none"} Hupheight={"none"} Hdowncolor={"#9B536F"} Hdownheight={"none"} title={"Education"} />
         <TemplateEducation education={educationinfo} />
-        <TempHeading color={"#C98A55"} Hupcolor={"none"} Hupheight={"none"} Hdowncolor={"#C98A55"} Hdownheight={"none"} title={"Key Skills"} />
+        <TempHeading color={"#9B536F"} Hupcolor={"none"} Hupheight={"none"} Hdowncolor={"#9B536F"} Hdownheight={"none"} title={"Key Skills"} />
         <ul style={{ marginBottom: 10 }}>
           {skills.map((skill, index) => {
             return <TemplateKeySkill key={index} skill={skill} />;
@@ -74,4 +72,4 @@ const Template1 = (props) => {
   );
 };
 
-export default Template1;
+export default Template3;

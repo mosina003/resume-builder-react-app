@@ -6,11 +6,10 @@ import template_4 from "../Images/sample_4.jpg";
 
 
 
-import Template1 from "../Templates/Template2";
-import Template2 from "../Templates/Template3";
-import Template3 from "../Templates/Template4";
-import Template4 from "../Templates/Template1";
-
+import Template1 from "../Templates/TemplateSpades";
+import Template2 from "../Templates/TemplateDiamonds";
+import Template3 from "../Templates/TemplateClubs";
+import Template4 from "../Templates/TemplateAce";
 
 
 export const templates = [

@@ -1,3 +1,4 @@
+//Actions triggers from the view and change the state or props by store help
 
 export const selectTemplate= (id) => ({
   type: "SELECTTEMPLATE",

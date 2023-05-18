@@ -19,7 +19,6 @@ const Template2 = (props) => {
     ? props.educationinfo
     : data.education_details;
   const skills = props.skills ? props.skills : data.key_skills;
-
   return (
     <Paper
       sx={{
@@ -28,7 +27,7 @@ const Template2 = (props) => {
           sm: "400px",
           md: "450px",
           lg: "500px",
-          xl: "600px",
+          xl: "550px",
         },
         height: {
           xs: "500px",
@@ -41,18 +40,18 @@ const Template2 = (props) => {
       id={`${props.index}report`}
       elevation={3}>
       <HeaderSection
-        primaryColor={"#2196f3"}
+        primaryColor={"#C98A55"}
         secondaryColor={"black"}
         bgColor={"white"}
-        hrcolor={"#2196f3"}
+        hrcolor={"none"}
         Hdownheight={"3px"}
         hrsecondcolor={"none"}
         personalInfo={personalinfo}
         workExperience={workexperience}
       />
       <Container>
-        <TempHeading color={"#2196f3"} Hupcolor={"#2196f3"} Hupheight={"3px"} Hdowncolor={"none"} Hdownheight={"none"} title={"Professional Experience"} />
-        <ul style={{ marginBottom: 10 }}>
+        <TempHeading color={"#C98A55"} Hupcolor={"none"} Hupheight={"none"} Hdowncolor={"#C98A55"} Hdownheight={"none"} title={"Professional Experience"} />
+        <ul style={{ paddingBottom: 10 }}>
           {workexperience.map((experience, index) => {
             return (
               <ExperienceSection
@@ -62,9 +61,9 @@ const Template2 = (props) => {
             );
           })}
         </ul>
-        <TempHeading color={"#2196f3"} Hupcolor={"#2196f3"} Hupheight={"3px"} Hdowncolor={"none"} Hdownheight={"none"} title={"Education"} />
+        <TempHeading color={"#C98A55"} Hupcolor={"none"} Hupheight={"none"} Hdowncolor={"#C98A55"} Hdownheight={"none"} title={"Education"} />
         <TemplateEducation education={educationinfo} />
-        <TempHeading color={"#2196f3"} Hupcolor={"#2196f3"} Hupheight={"3px"} Hdowncolor={"none"} Hdownheight={"none"} title={"Key Skills"} />
+        <TempHeading color={"#C98A55"} Hupcolor={"none"} Hupheight={"none"} Hdowncolor={"#C98A55"} Hdownheight={"none"} title={"Key Skills"} />
         <ul style={{ marginBottom: 10 }}>
           {skills.map((skill, index) => {
             return <TemplateKeySkill key={index} skill={skill} />;

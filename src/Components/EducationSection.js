@@ -6,11 +6,11 @@ import { addEducation } from "../Redux/Actions/actions";
 import { useForm, Controller } from "react-hook-form";
 import "../Styles/EducationSection.css";
 
-const StatetoProps = (state) => ({
+const mapStatetoProps = (state) => ({
   educationInfo: state.educationDetailsReducer.educationInfo,
 });
 
-const DispatchtoProps = (dispatch) => ({
+const mapDispatchtoProps = (dispatch) => ({
   onAddEducation: (details) => dispatch(addEducation(details)),
 });
 
@@ -174,4 +174,4 @@ const EducationSection = (props) => {
   );
 };
 
-export default connect(StatetoProps, DispatchtoProps)(EducationSection);
+export default connect(mapStatetoProps, mapDispatchtoProps)(EducationSection);

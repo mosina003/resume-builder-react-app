@@ -1,3 +1,4 @@
+//Reducers are combined with combined reducer as root reducer.
 
 import {
   selectedTemplateReducer,

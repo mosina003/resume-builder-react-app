@@ -21,6 +21,7 @@ const Home = (props) => {
     props.setSelectedTemplateId(id);
     navigate("/template/fill-details");
   };
+   //setting the navbar active link to identify on which page user is at.
 
   return (
     <>

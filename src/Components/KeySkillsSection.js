@@ -7,11 +7,11 @@ import { connect } from "react-redux";
 import {BackNextButton,Input} from "../Pages/index";
 import { addNewSkills, deleteSkill, editSkill } from "../Redux/Actions/actions";
 
-const StatetoProps = (state) => ({
+const mapStatetoProps = (state) => ({
   skills: state.keySkillsReducer.skills,
 });
 
-const DispatchtoProps = (dispatch) => ({
+const mapDispatchtoProps = (dispatch) => ({
   onAddNewSkill: () => dispatch(addNewSkills()),
   onEditSkill: (skills) => dispatch(editSkill(skills)),
   onDeleteSkill: (index) => dispatch(deleteSkill(index)),
@@ -104,4 +104,4 @@ function KeyskillsSection(props) {
   );
 }
 
-export default connect(StatetoProps, DispatchtoProps)(KeyskillsSection);
+export default connect(mapStatetoProps, mapDispatchtoProps)(KeyskillsSection);

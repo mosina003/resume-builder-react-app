@@ -10,6 +10,8 @@ import {
 } from "./";
 import "./Styles/DetailsFilling.css";
 
+// As soon as details are filled for particular section browser moves further to next fields 
+// if  there is same field on same page
 
 const DetailsFilling = (props) => {
   const [tab, setTab] = useState(0);

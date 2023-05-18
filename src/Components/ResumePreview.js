@@ -1,12 +1,13 @@
 import "../Styles/ResumePreview.css";
 import React, { useState } from "react";
-import { Button, CircularProgress, Container, TextField } from "@mui/material";
+import { Button, CircularProgress, Container, TextField, Box, Modal, Typography } from "@mui/material";
 import JsPDF from "jspdf";
 import uniqid from "uniqid";
 import { connect } from "react-redux";
 import { templates } from "../Utils/Data/templates";
+import CheckCircleIcon from '@mui/icons-material/CheckCircle';
 
-const StatetoProps = (state) => ({
+const mapStatetoProps = (state) => ({
   selectedTemplateId: state.selectedTemplateReducer.selectedTemplateId,
   selectedResumeId: state.selectedTemplateReducer.selectedResumeId,
   personalInfo: state.personalInfoReducer.personalInfo,
@@ -15,14 +16,16 @@ const StatetoProps = (state) => ({
   skills: state.keySkillsReducer.skills,
 });
 
-const DispatchtoProps = (dispatch) => ({});
+const mapDispatchtoProps = (dispatch) => ({});
 
 const ResumePreview = (props) => {
+  const [showModal,setShowModal]=useState(false)
   const [loading, setLoading] = useState(false);
   const [resumeName, setResumeName] = useState("");
   const [error, setError] = useState("");
 
   const getTemplate = (template, index) => {
+    // creating a new React element using another element as a starting point.
     if (template.id === props.selectedTemplateId) {
       const TemplateComp = React.cloneElement(template.template, {
         personalinfo: props.personalInfo,
@@ -48,6 +51,7 @@ const ResumePreview = (props) => {
         .then(() => {
           report.save(`${resumeName}.pdf`);
           setLoading(false);
+                    //Saving the user data in localstorage
           let resumes = window.localStorage.getItem("resumes");
           if (resumes) {
             let newResumes = JSON.parse(resumes);
@@ -105,11 +109,12 @@ const ResumePreview = (props) => {
               ])
             );
           }
-
+          //Redirect user to the myResumes page
           window.location.reload();
         })
         .catch((error) => console.log(error.message));
     }
+    setShowModal(true); // Set showPopup state to true after successful download
   };
 
   const handleBack = () => {
@@ -156,12 +161,43 @@ const ResumePreview = (props) => {
               {loading ? (
                 <CircularProgress size={25} />
               ) : (
+                <Box>
                 <Button
                   onClick={handleSave}
                   className="contained-btn"
                   variant="contained">
                   Save
                 </Button>
+                {showModal && (
+                                <Modal open={showModal}>
+                                    <Box sx={{
+                                        position: 'absolute',
+                                        top: '50%',
+                                        left: '50%',
+                                        transform: 'translate(-50%, -50%)',
+                                        bgcolor: 'background.paper',
+                                        boxShadow: 24,
+                                        p: 4,
+                                        borderRadius: '10px',
+                                        maxWidth: '80vw',
+                                        maxHeight: '80vh',
+                                        overflow: 'auto',
+                                        display:'flex',
+                                        flexDirection:'column',
+                                        alignItems:'center', 
+                                        justifyContent:'center',
+                                        height:'30%',
+                                    }} className={showModal ? 'animate-modal visible' : 'animate-modal'}
+                                    >
+                                        <CheckCircleIcon color='primary' style={{ fontSize: 80 }} />
+
+                                    <Typography variant='h5'>Your Resume has been Successfully Saved</Typography>
+                                    <Box display='flex' flexDirection='column' alignItems='center' justifyContent='center' height='100%'>
+                                    </Box>
+                                    </Box>
+                                </Modal>
+                                )}
+                </Box>
               )}
             </div>
           </div>
@@ -171,4 +207,4 @@ const ResumePreview = (props) => {
   );
 };
 
-export default connect(StatetoProps, DispatchtoProps)(ResumePreview);
+export default connect(mapStatetoProps, mapDispatchtoProps)(ResumePreview);

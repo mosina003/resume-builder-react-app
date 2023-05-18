@@ -8,7 +8,7 @@ import ExperienceSection from "../../Components/ExperienceSection";
 import TemplateEducation from "../../Components/TemplateEducation";
 import TemplateKeySkill from "../../Components/TemplateKeySkill";
 
-const Template2 = (props) => {
+const Template4 = (props) => {
   const personalinfo = props.personalinfo
     ? props.personalinfo
     : data.personal_info;
@@ -74,4 +74,4 @@ const Template2 = (props) => {
   );
 };
 
-export default Template2;
+export default Template4;

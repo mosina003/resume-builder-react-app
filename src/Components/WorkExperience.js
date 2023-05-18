@@ -6,11 +6,12 @@ import { connect } from "react-redux";
 import { addAllExperience, addExperience } from "../Redux/Actions/actions";
 import {BackNextButton,SelectComponent,Input} from "../Pages/index";
 
-const StatetoProps = (state) => ({
+//mapStateToProps is used for selecting the part of the data from the store that the connected component needs
+const mapStatetoProps = (state) => ({
   experiences: state.workExperienceReducer.experiences,
 });
 
-const DispatchtoProps = (dispatch) => ({
+const mapDispatchtoProps = (dispatch) => ({
   setExperience: (experience) => dispatch(addExperience(experience)),
   setAllExperience: (experiences) => dispatch(addAllExperience(experiences)),
 });
@@ -262,6 +263,6 @@ const WorkExperience = (props) => {
 };
 
 export default connect(
-  StatetoProps,
-  DispatchtoProps
+  mapStatetoProps,
+  mapDispatchtoProps
 )(WorkExperience);

@@ -1,3 +1,4 @@
+//Initial values declared  to the reducer
 
 const initialSelectedTemplateState = {
   selectedTemplateId: null,
@@ -44,7 +45,6 @@ const initialEducationState = {
 const initialSkillsState = {
   skills: ["", "", ""],
 };
-
 
 
 export const selectedTemplateReducer = (
