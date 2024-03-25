@@ -46,6 +46,20 @@ const initialSkillsState = {
   skills: ["", "", ""],
 };
 
+const initialTechSkillsState = {
+  Techskills: ["", "", ""],
+};
+
+const initialProjectsState = {
+  Projects: ["", "", ""],
+};
+
+const initialExtracurricularState = {
+  Extracurricular: ["", "", ""],
+};
+
+
+
 
 export const selectedTemplateReducer = (
   state = initialSelectedTemplateState,
@@ -117,6 +131,73 @@ export const keySkillsReducer = (state = initialSkillsState, action) => {
       return state;
   }
 };
+
+
+export const TechSkillsReducer = (state = initialTechSkillsState, action) => {
+  switch (action.type) {
+    case "ADDTECHSKILLS":
+      return { ...state, Techskills: [...state.Techskills, ""] };
+    case "EDITTECHSKILL": {
+      return {
+        ...state,
+        Techskills: action.payload,
+      };
+    }
+    case "DELETETECHSKILL": {
+      const newSkills = state.Techskills.filter(
+        (Techskills, id) => id !== action.payload
+      );
+
+      return { ...state, Techskills: newSkills };
+    }
+    default:
+      return state;
+  }
+};
+export const ProjectsReducer = (state = initialProjectsState, action) => {
+  switch (action.type) {
+    case "ADDPROJECTS":
+      return { ...state, Projects: [...state.Projects, ""] };
+    case "EDITPROJECTS": {
+      return {
+        ...state,
+        Projects: action.payload,
+      };
+    }
+    case "DELETEProjects": {
+      const newSkills = state.Projects.filter(
+        (Projects, id) => id !== action.payload
+      );
+
+      return { ...state, Projects: newSkills };
+    }
+    default:
+      return state;
+  }
+};
+export const ExtracurricularReducer = (state = initialExtracurricularState, action) => {
+  switch (action.type) {
+    case "ADDEXTRACURRICULAR":
+      return { ...state, Extracurricular: [...state.Extracurricular, ""] };
+    case "EDITEXTRACURRICULAR": {
+      return {
+        ...state,
+        Extracurricular: action.payload,
+      };
+    }
+    case "DELETEExtracurricular": {
+      const newSkills = state.Extracurricular.filter(
+        (Extracurricular, id) => id !== action.payload
+      );
+
+      return { ...state, Extracurricular: newSkills };
+    }
+    default:
+      return state;
+  }
+};
+
+
 
 export const educationDetailsReducer = (
   state = initialEducationState,

@@ -7,6 +7,9 @@ import { data } from "../Data/data";
 import ExperienceSection from "../../Components/ExperienceSection";
 import TemplateEducation from "../../Components/TemplateEducation";
 import TemplateKeySkill from "../../Components/TemplateKeySkill";
+import TemplateTechSkill  from "../../Components/TemplateTechSkill";
+import TemplateProjects  from "/workspaces/resume-builder-react-app/src/Components/TemplateProject.js";
+import TemplateExtracurricular from "../../Components/TemplateExtracurricular";
 
 const Template3 = (props) => {
   const personalinfo = props.personalinfo
@@ -20,6 +23,12 @@ const Template3 = (props) => {
     : data.education_details;
   const skills = props.skills ? props.skills : data.key_skills;
 
+  
+  const Techskills = props.Techskills ? props.Techskills : data.key_Techskills;
+
+  const Projects = props.Projects ? props.Projects : data.key_Projects;
+
+  const Extracurricular = props.Extracurricular ? props.Extracurricular : data.key_Extracurricular;
   return (
     <Paper
       sx={{
@@ -31,11 +40,11 @@ const Template3 = (props) => {
           xl: "600px",
         },
         height: {
-          xs: "500px",
-          sm: "550px",
-          md: "600px",
-          lg: "650px",
-          xl: "700px",
+          xs: "1000px",
+          sm: "700px",
+          md: "800px",
+          lg: "900px",
+          xl: "1000px",
         },
       }}
       id={`${props.index}report`}
@@ -48,7 +57,7 @@ const Template3 = (props) => {
         workExperience={workexperience}
       />
       <Container>
-        <TempHeading color={"#9B536F"} Hupcolor={"none"} Hupheight={"none"} Hdowncolor={"#9B536F"} Hdownheight={"none"} title={"Professional Experience"} />
+        <TempHeading color={"#9B536F"} Hupcolor={"none"} Hupheight={"none"} Hdowncolor={"#9B536F"} Hdownheight={"none"} title={"Training/Internships"} />
         <ul style={{ marginBottom: 10 }}>
           {workexperience.map((experience, index) => {
             return (
@@ -61,10 +70,28 @@ const Template3 = (props) => {
         </ul>
         <TempHeading color={"#9B536F"} Hupcolor={"none"} Hupheight={"none"} Hdowncolor={"#9B536F"} Hdownheight={"none"} title={"Education"} />
         <TemplateEducation education={educationinfo} />
-        <TempHeading color={"#9B536F"} Hupcolor={"none"} Hupheight={"none"} Hdowncolor={"#9B536F"} Hdownheight={"none"} title={"Key Skills"} />
+        <TempHeading color={"#9B536F"} Hupcolor={"none"} Hupheight={"none"} Hdowncolor={"#9B536F"} Hdownheight={"none"} title={"Soft Skills"} />
         <ul style={{ marginBottom: 10 }}>
           {skills.map((skill, index) => {
             return <TemplateKeySkill key={index} skill={skill} />;
+          })}
+        </ul>
+        <TempHeading color={"#9B536F"} Hupcolor={"none"} Hupheight={"3px"} Hdowncolor={"#9B536F"} Hdownheight={"none"} title={"Technical Skills"} />
+        <ul style={{ marginBottom: 10 }}>
+          {Techskills.map((skill, index) => {
+            return <TemplateTechSkill key={index} TechSkills={skill} />;
+          })}
+        </ul>
+        <TempHeading color={"#9B536F"} Hupcolor={"none"} Hupheight={"3px"} Hdowncolor={"#9B536F"} Hdownheight={"none"} title={"Projects"} />
+        <ul style={{ marginBottom: 10 }}>
+          {Projects.map((skill, index) => {
+            return <TemplateProjects key={index} Projects={skill} />;
+          })}
+        </ul>
+        <TempHeading color={"#9B536F"} Hupcolor={"none"} Hupheight={"3px"} Hdowncolor={"#9B536F"} Hdownheight={"none"} title={"Extracurricular"} />
+        <ul style={{ marginBottom: 10 }}>
+          {Extracurricular.map((skill, index) => {
+            return <TemplateExtracurricular key={index} Extracurricular={skill} />;
           })}
         </ul>
       </Container>

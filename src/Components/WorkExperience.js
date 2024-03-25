@@ -121,16 +121,16 @@ const WorkExperience = (props) => {
 
   return (
     <Paper className="work-experience-paper" elevation={3}>
-      <h2 className="work-experience-heading">Work Experience</h2>
+      <h2 className="work-experience-heading">Training/Internship</h2>
       <form onSubmit={handleSubmit(handleNext)}>
         {props.experiences.map((experience) => {
           return (
             <div key={experience.id} className="experience-cont">
-              <h3 className="experience-heading">Experience {experience.id}</h3>
+              <h3 className="experience-heading">.</h3>
               <Divider sx={{ margin: "5px 0px" }} />
               <div className="experience-form-cont">
                 <Input
-                  title={"Job Title"}
+                  title={"domain"}
                   type={"text"}
                   name={"jobTitle" + experience.id}
                   register={register}

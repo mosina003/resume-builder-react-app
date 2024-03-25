@@ -5,19 +5,19 @@ import { Paper, Divider, Button } from "@mui/material";
 import DeleteOutlineOutlinedIcon from "@mui/icons-material/DeleteOutlineOutlined";
 import { connect } from "react-redux";
 import {BackNextButton,Input} from "../Pages/index";
-import { addNewSkills, deleteSkill, editSkill } from "../Redux/Actions/actions";
+import { addExtracurricular, deleteExtracurricular, editExtracurricular } from "../Redux/Actions/actions";
 
 const mapStatetoProps = (state) => ({
-  skills: state.keySkillsReducer.skills,
+  Extracurricular: state.ExtracurricularReducer.Extracurricular,
 });
 
 const mapDispatchtoProps = (dispatch) => ({
-  onAddNewSkill: () => dispatch(addNewSkills()),
-  onEditSkill: (skills) => dispatch(editSkill(skills)),
-  onDeleteSkill: (index) => dispatch(deleteSkill(index)),
+  onAddExtracurricular: () => dispatch(addExtracurricular()),
+  onEditExtracurricular: (Extracurricular) => dispatch(editExtracurricular(Extracurricular)),
+  onDeleteExtracurricular: (index) => dispatch(deleteExtracurricular(index)),
 });
 
-function KeyskillsSection(props) {
+function ExtracurricularSection(props) {
   const [loading, setLoading] = useState(false);
   const {
     register,
@@ -25,7 +25,7 @@ function KeyskillsSection(props) {
     formState: { errors },
   } = useForm();
 
-  /*const handlePreview = (data) => {
+  const handlePreview = (data) => {
     setLoading(true);
 
     setTimeout(() => {
@@ -33,38 +33,30 @@ function KeyskillsSection(props) {
       props.setTab(props.tab + 1);
     }, 1000);
 
-  };*/
+  };
+
 
   const handleBack = () => {
     props.setTab(props.tab - 1);
   };
 
-  const onEditSkill = (value, id) => {
-    const newSkills = props.skills.map((skill, index) => {
+  const onEditExtracurricular= (value, id) => {
+    const Extracurricular = props.Extracurricular.map((Extracurricular, index) => {
       if (index === id) {
         return value;
-      } else return skill;
+      } else return Extracurricular;
     });
 
-    props.onEditSkill(newSkills);
-  };
-  const handleNext = (data) => {
-    setLoading(true);
-   
-
-    setTimeout(() => {
-      setLoading(false);
-      props.setTab(props.tab + 1);
-    }, 1000);
+    props.onEditExtracurricular(Extracurricular);
   };
 
   return (
     <Paper elevation={3} className="key-skills-paper">
-      <h2 className="key-skills-heading">Soft Skills</h2>
+      <h2 className="key-skills-heading">Extracurricular</h2>
       <Divider />
-      <form onSubmit={handleSubmit(handleNext)}>
+      <form onSubmit={handleSubmit(handlePreview)}>
         <div className="key-skills-form-fields">
-          {props.skills.map((skill, index) => {
+          {props.Extracurricular.map((skill, index) => {
             return (
               <div key={index} className="key-input-with-delete">
                 <Input
@@ -73,7 +65,7 @@ function KeyskillsSection(props) {
                   register={register}
                   multiline={false}
                   value={skill}
-                  setValue={(skill) => onEditSkill(skill, index)}
+                  setValue={(skill) => onEditExtracurricular(skill, index)}
                   error={errors[`skill${index + 1}`] ? true : false}
                   errorMessage={
                     errors[`skill${index + 1}`]
@@ -81,7 +73,7 @@ function KeyskillsSection(props) {
                       : null
                   }
                 />
-                {props.skills.length === 1 ? null : (
+                {props.Extracurricular.length === 1 ? null : (
                   <DeleteOutlineOutlinedIcon
                     sx={{ marginLeft: "10px" }}
                     onClick={() => props.onDeleteSkill(index)}
@@ -91,22 +83,22 @@ function KeyskillsSection(props) {
             );
           })}
         </div>
-        {props.skills.length >= 6 ? null : (
+        {props.Extracurricular.length >= 7 ? null : (
           <Button
             className="add-new-btn"
             variant="text"
-            onClick={props.onAddNewSkill}>
+            onClick={props.onAddTechNewSkill}>
             Add new
           </Button>
         )}
         <Divider className="key-skills-divider" />
        
         <BackNextButton
-           onNext={() => handleSubmit(handleNext)}
-           onBack={handleBack}
+          onNext={handlePreview}
           loading={loading}
           tab={props.tab}
-          nextTitle={"Next"}
+          onBack={handleBack}
+          nextTitle={"Preview"}
           backTitle={"Back"}
         />
       </form>
@@ -114,4 +106,4 @@ function KeyskillsSection(props) {
   );
 }
 
-export default connect(mapStatetoProps, mapDispatchtoProps)(KeyskillsSection);
+export default connect(mapStatetoProps, mapDispatchtoProps)(ExtracurricularSection);

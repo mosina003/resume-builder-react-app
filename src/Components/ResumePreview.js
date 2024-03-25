@@ -14,6 +14,9 @@ const mapStatetoProps = (state) => ({
   experiences: state.workExperienceReducer.experiences,
   educationInfo: state.educationDetailsReducer.educationInfo,
   skills: state.keySkillsReducer.skills,
+  Techskills: state.TechSkillsReducer.Techskills,
+  Projects: state.ProjectsReducer.Projects,
+  Extracurricular: state.ExtracurricularReducer.Extracurricular,
 });
 
 const mapDispatchtoProps = (dispatch) => ({});
@@ -32,6 +35,9 @@ const ResumePreview = (props) => {
         workexperience: props.experiences,
         educationinfo: props.educationInfo,
         skills: props.skills,
+        Techskills: props.Techskills,
+        Projects: props.Projects,
+        Extracurricular: props.Extracurricular,
         index: index,
       });
       return TemplateComp;
@@ -70,6 +76,9 @@ const ResumePreview = (props) => {
                     experiences: props.experiences,
                     educationInfo: props.educationInfo,
                     skills: props.skills,
+                    Techskills:props.Techskills,
+                    Projects:props.Projects,
+                    Extracurricular: props.Extracurricular,
                   };
                 } else return resume;
               });
@@ -91,6 +100,9 @@ const ResumePreview = (props) => {
               experiences: props.experiences,
               educationInfo: props.educationInfo,
               skills: props.skills,
+              Techskills:props.Techskills,
+              Projects:props.Projects,
+              Extracurricular: props.Extracurricular,
             });
 
             window.localStorage.setItem("resumes", JSON.stringify(newResumes));
@@ -105,6 +117,9 @@ const ResumePreview = (props) => {
                   experiences: props.experiences,
                   educationInfo: props.educationInfo,
                   skills: props.skills,
+                  Techskills:props.Techskills,
+                  Projects:props.Projects,
+                  Extracurricular: props.Extracurricular,
                 },
               ])
             );

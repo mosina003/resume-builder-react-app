@@ -9,12 +9,15 @@ import Grid from "@mui/material/Grid";
 import SentimentVeryDissatisfiedIcon from "@mui/icons-material/SentimentVeryDissatisfied";
 import { connect } from "react-redux";
 import { templates } from "../Utils/Data/templates";
-import { Navbar, ScreenDarkComponent } from "./";
+import { Navbar, ScreenDarkComponent, TechSkill } from "./";
 import {
   addAllExperience,
   addEducation,
   addPersonalInfo,
   editSkill,
+  editTechSkill,
+  editProjects,
+  editExtracurricular,
   selectResume,
   selectTemplate,
 } from "../Redux/Actions/actions";
@@ -39,6 +42,10 @@ const DispatchtoProps = (dispatch) => ({
   setAllExperience: (experiences) => dispatch(addAllExperience(experiences)),
   onAddEducation: (details) => dispatch(addEducation(details)),
   onEditSkill: (skills) => dispatch(editSkill(skills)),
+  //onEditTechSkill: (skills) => dispatch(editTechSkill(TechSkill)),
+  //onEditProjects: (skills) => dispatch(editProjects(Projects)),
+  //onEditExtracurricular: (skills) => dispatch(editExtracurricular(Extracurricular)),
+
 });
 
 const MyResumes = (props) => {
@@ -64,6 +71,9 @@ const MyResumes = (props) => {
       workexperience: resume.experiences,
       educationinfo: resume.educationInfo,
       skills: resume.skills,
+      //TechSkill:resume.TechSkill,
+      //Projects:resume.projects,
+      //Extracurricular:resume.Extracurricular,
       key: resume.id,
       index: index,
     });
@@ -102,6 +112,12 @@ const MyResumes = (props) => {
 
 
     props.onEditSkill(resume.skills);
+
+   // props.onEditTechSkill(resume.TechSkill);
+
+   //props.onEditprojects(resume.Projects);
+
+   //props.onEditExtracurricular(resume.Extracurricular);
   };
 
   const navigateToFillDetails = (resume) => {

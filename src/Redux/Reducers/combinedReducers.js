@@ -5,6 +5,9 @@ import {
   personalInfoReducer,
   workExperienceReducer,
   keySkillsReducer,
+  TechSkillsReducer,
+  ProjectsReducer,
+  ExtracurricularReducer,
   educationDetailsReducer,
 } from "./reducers";
 
@@ -16,6 +19,9 @@ const rootReducer = combineReducers({
   personalInfoReducer,
   workExperienceReducer,
   keySkillsReducer,
+  TechSkillsReducer,
+  ProjectsReducer,
+  ExtracurricularReducer,
   educationDetailsReducer,
 });
 

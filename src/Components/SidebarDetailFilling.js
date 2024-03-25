@@ -152,6 +152,54 @@ const SidebarDetailFilling = (props) => {
                 />
               </ListItemButton>
             </ListItem>
+            <Divider/>
+            <ListItem disablePadding>
+              <ListItemButton
+                component="a"
+                sx={
+                  props.tab === 4
+                    ? { borderLeft: "3px solid rgb(0, 128, 255)" }
+                    : null
+                }>
+                 <StarsRoundedIcon
+                  color={props.tab === 4 ? "info" : "disabled"}
+                />
+                <ListItemText
+                  className="IcoSpace"
+                  primary="Technical Skill"
+                  sx={
+                    props.tab === 4
+                      ? { color: "rgb(0, 128, 255)", paddingLeft: "8px" }
+                      : null
+                  }
+                />
+              </ListItemButton>
+            </ListItem>
+            <Divider/>
+            <ListItem disablePadding>
+              <ListItemButton
+                component="a"
+                sx={
+                  props.tab === 5
+                    ? { borderLeft: "3px solid rgb(0, 128, 255)" }
+                    : null
+                }>
+                 <StarsRoundedIcon
+                  color={props.tab === 5 ? "info" : "disabled"}
+                />
+                <ListItemText
+                  className="IcoSpace"
+                  primary="Projects"
+                  sx={
+                    props.tab === 5
+                      ? { color: "rgb(0, 128, 255)", paddingLeft: "8px" }
+                      : null
+                  }
+                />
+              </ListItemButton>
+            </ListItem>
+            
+            
           </List>
         </Box>
       ) : (

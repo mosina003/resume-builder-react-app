@@ -50,7 +50,7 @@ const Template4 = (props) => {
         workExperience={workexperience}
       />
       <Container>
-        <TempHeading color={"#9B536F"} Hupcolor={"none"} Hupheight={"none"} Hdowncolor={"#9B536F"} Hdownheight={"none"} title={"Professional Experience"} />
+        <TempHeading color={"#9B536F"} Hupcolor={"none"} Hupheight={"none"} Hdowncolor={"#9B536F"} Hdownheight={"none"} title={"Training/Internships"} />
         <ul style={{ marginBottom: 10 }}>
           {workexperience.map((experience, index) => {
             return (
@@ -63,7 +63,7 @@ const Template4 = (props) => {
         </ul>
         <TempHeading color={"#9B536F"} Hupcolor={"none"} Hupheight={"none"} Hdowncolor={"#9B536F"} Hdownheight={"none"} title={"Education"} />
         <TemplateEducation education={educationinfo} />
-        <TempHeading color={"#9B536F"} Hupcolor={"none"} Hupheight={"none"} Hdowncolor={"#9B536F"} Hdownheight={"none"} title={"Key Skills"} />
+        <TempHeading color={"#9B536F"} Hupcolor={"none"} Hupheight={"none"} Hdowncolor={"#9B536F"} Hdownheight={"none"} title={"Soft Skills"} />
         <ul style={{ marginBottom: 10 }}>
           {skills.map((skill, index) => {
             return <TemplateKeySkill key={index} skill={skill} />;

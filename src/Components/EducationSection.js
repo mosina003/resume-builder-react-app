@@ -64,14 +64,56 @@ const EducationSection = (props) => {
       <form onSubmit={handleSubmit(handleNext)}>
         <div className="education-form-cont">
           <Input
-            title={"Domain"}
+            title={"10th School name"}
             type={"text"}
-            name={"domain"}
+            name={"schoolname1"}
             register={register}
             multiline={false}
-            value={props.educationInfo.domain}
+            value={props.educationInfo.schoolname1}
             setValue={(value) =>
-              props.onAddEducation({ ...props.educationInfo, domain: value })
+              props.onAddEducation({ ...props.educationInfo, Schoolname1: value })
+            }
+            error={errors.domain ? true : false}
+            errorMessage={errors.domain ? errors.domain.message : null}
+          />
+          <div></div>
+          <Input
+            title={"SSLC/10th mark"}
+            type={"text"}
+            name={"sslcmark"}
+            register={register}
+            multiline={false}
+            value={props.educationInfo.sslcmark}
+            setValue={(value) =>
+              props.onAddEducation({ ...props.educationInfo, sslcmark: value })
+            }
+            error={errors.domain ? true : false}
+            errorMessage={errors.domain ? errors.domain.message : null}
+          />
+          <div></div>
+          <Input
+            title={"12th School name"}
+            type={"text"}
+            name={"schoolname2"}
+            register={register}
+            multiline={false}
+            value={props.educationInfo.schoolname2}
+            setValue={(value) =>
+              props.onAddEducation({ ...props.educationInfo, Schoolname2: value })
+            }
+            error={errors.domain ? true : false}
+            errorMessage={errors.domain ? errors.domain.message : null}
+          />
+          <div></div>
+          <Input
+            title={"HSC/12th mark"}
+            type={"text"}
+            name={"hscmark"}
+            register={register}
+            multiline={false}
+            value={props.educationInfo.hscmark}
+            setValue={(value) =>
+              props.onAddEducation({ ...props.educationInfo, hscmark: value })
             }
             error={errors.domain ? true : false}
             errorMessage={errors.domain ? errors.domain.message : null}
@@ -101,10 +143,27 @@ const EducationSection = (props) => {
             multiline={false}
             value={props.educationInfo.degree}
             setValue={(value) =>
-              props.onAddEducation({ ...props.educationInfo, degree: value })
+              props.onAddEducation({
+                 ...props.educationInfo,
+                  degree: value
+                 })
             }
             error={errors.degree ? true : false}
             errorMessage={errors.degree ? errors.degree.message : null}
+          />
+          <div></div>
+          <Input
+            title={"CGPA"}
+            type={"text"}
+            name={"cgpa"}
+            register={register}
+            multiline={false}
+            value={props.educationInfo.cgpa}
+            setValue={(value) =>
+              props.onAddEducation({ ...props.educationInfo, cgpa: value })
+            }
+            error={errors.domain ? true : false}
+            errorMessage={errors.domain ? errors.domain.message : null}
           />
           <SelectComponent
             title={"Start Year"}

@@ -43,4 +43,7 @@ export const data = {
     end_year: "2022",
   },
   key_skills: ["REACT", "DEVOPS","CYBER-SECURITY","ANYTHING", "JAVA", "Python", "DATA-STRUCTURES"],
+  key_Techskills: ["REACT", "DEVOPS","CYBER-SECURITY","ANYTHING", "JAVA", "Python", "DATA-STRUCTURES"],
+  key_Projects: ["RESUME GENERATOR","MACHINE LEARNING MODEL"],
+  key_Extracurricular: ["SINGING","DANCING"]
 };

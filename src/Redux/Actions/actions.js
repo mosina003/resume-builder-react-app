@@ -15,6 +15,51 @@ export const addPersonalInfo = (details) => ({
   payload: details,
 });
 
+
+
+export const addTechSkill = () => ({
+  type: "ADDTECHSKILLS",
+  payload: null,
+});
+
+export const editTechSkill = (skills) => ({
+  type: "EDITTECHSKILL",
+  payload: skills,
+});
+
+export const deleteTechSkill = (id) => ({
+  type: "DELETETECHSKILL",
+  payload: id,
+});
+export const addProjects = () => ({
+  type: "ADDPROJECTS",
+  payload: null,
+});
+
+export const editProjects = (skills) => ({
+  type: "EDITPROJECTS",
+  payload: skills,
+});
+
+export const deleteProjects = (id) => ({
+  type: "DELETEPROJECTS",
+  payload: id,
+});
+export const addExtracurricular = () => ({
+  type: "ADDEXTRACURRICULAR",
+  payload: null,
+});
+
+export const editExtracurricular = (skills) => ({
+  type: "EDITEXTRACURRICULAR",
+  payload: skills,
+});
+
+export const deleteExtracurricular = (id) => ({
+  type: "DELETEEXTRACURRICULAR",
+  payload: id,
+});
+
 export const addExperience = (experience) => ({
   type: "ADDEXPERIENCE",
   payload: experience,

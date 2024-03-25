@@ -7,6 +7,9 @@ import {
   PersonalInformation,
   ResumePreview,
   WorkExperience,
+  TechSkill,
+  Projects,
+  Extracurricular,
 } from "./";
 import "./Styles/DetailsFilling.css";
 
@@ -19,7 +22,7 @@ const DetailsFilling = (props) => {
   return (
     <div className="details-filling">
       <Navbar active={""} />
-      {tab === 4 ? null : (
+      {tab === 7 ? null : (
         <div className="details-filling-cont">
           <SidebarDetailFilling tab={tab} setTab={setTab} />
           {tab === 0 ? (
@@ -30,9 +33,15 @@ const DetailsFilling = (props) => {
             <WorkExperience setTab={setTab} tab={tab} />
           ) : null}
           {tab === 2 ? <EducationSection setTab={setTab} tab={tab} /> : null}
+
+          {tab === 4 ? <TechSkill setTab={setTab} tab={tab} /> : null}
+
+          {tab === 5 ? <Projects setTab={setTab} tab={tab} /> : null}
+
+          {tab === 6 ? <Extracurricular setTab={setTab} tab={tab} /> : null}
         </div>
       )}
-      {tab === 4 ? <ResumePreview setTab={setTab} tab={tab} /> : null}
+      {tab === 7 ? <ResumePreview setTab={setTab} tab={tab} /> : null}
     </div>
   );
 };
